@@ -19,6 +19,28 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void testCurrentStationIsLessThanMin() {
+        Radio radio = new Radio();
+
+        radio.setCurrentStationNumber(-1);
+
+        int actual = radio.getCurrentStationNumber();
+        int expected = 0;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCurrentStationIsMoreThanMax() {
+        Radio radio = new Radio();
+
+        radio.setCurrentStationNumber(10);
+
+        int actual = radio.getCurrentStationNumber();
+        int expected = 0;
+        Assertions.assertEquals(expected, actual);
+    }
+
 
     @Test
     public void testCurrentVolume() {
@@ -42,6 +64,29 @@ public class RadioTest {
         int expected = 0;
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testWhenCurrentVolumeIsLessThanMin() {
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(-1);
+
+        int actual = radio.getCurrentVolume();
+        int expected = 0;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testWhenCurrentVolumeIsMoreThanMax() {
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(101);
+
+        int actual = radio.getCurrentVolume();
+        int expected = 0;
+        Assertions.assertEquals(expected, actual);
+    }
+
 
     @Test
     public void testPrevStation() {
